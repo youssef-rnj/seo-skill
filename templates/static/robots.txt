@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# Search and AI-answer bots (ChatGPT search, Perplexity, Claude, Copilot via Bing) are covered by "*".
+# Gemini apps / Vertex grounding. No effect on Google Search or AI Overviews.
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+# Training-only crawlers: owner's choice. Delete this block to allow them.
+User-agent: GPTBot
+User-agent: CCBot
+User-agent: ClaudeBot
+User-agent: anthropic-ai
+Disallow: /
+
+# Never list secret admin paths here (this file is public). Protect them with noindex + authentication.
+
+Sitemap: https://example.com/sitemap.xml

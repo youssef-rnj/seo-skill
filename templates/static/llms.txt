@@ -1,0 +1,18 @@
+# Example Company
+
+> One paragraph: who you are, what you do, for whom, where (full address). Only confirmed facts.
+
+Contact: +00 000 00 00 00 — https://example.com/contact
+
+## Services
+
+- [Service one](https://example.com/services/service-one): one line on what is included and for whom.
+- [Service two](https://example.com/services/service-two): one line.
+
+## About
+
+- [About](https://example.com/about): the company, its team and values.
+
+## Articles
+
+- [Blog](https://example.com/blog): topics covered.
