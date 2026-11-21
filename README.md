@@ -30,13 +30,13 @@ Built from a real project that went from 82 to 97/100 on its audit, then made ge
 **Claude Code (personal skill):**
 
 ```bash
-git clone https://github.com/<your-account>/seo-skills ~/.claude/skills/seo-skills
+git clone https://github.com/youssef-rnj/seo-skills ~/.claude/skills/seo-skills
 ```
 
 On Windows (PowerShell):
 
 ```powershell
-git clone https://github.com/<your-account>/seo-skills "$env:USERPROFILE\.claude\skills\seo-skills"
+git clone https://github.com/youssef-rnj/seo-skills "$env:USERPROFILE\.claude\skills\seo-skills"
 ```
 
 **Per project:** copy the folder to `.claude/skills/seo-skills` in the project.
