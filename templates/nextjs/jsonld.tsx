@@ -99,17 +99,16 @@ export const article = (a: {
   mainEntityOfPage: `${SITE_URL}/blog/${a.slug}`,
 });
 
+// Google stopped showing FAQ rich results on 2026-05-07. The markup is still valid schema.org and
+// harmless; add it only for Q&A visible on the page, and expect no rich result from it.
 export const faq = (qa: { q: string; a: string }[]) => ({
   '@type': 'FAQPage',
   mainEntity: qa.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
 });
 
 // Render one script with an @graph. Only include FAQ when the Q&A is visible on the page.
+// Escape "<" so a "</script>" inside any CMS field cannot close the tag (Next.js JSON-LD guide).
 export function JsonLd({ graph }: { graph: object[] }) {
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }) }}
-    />
-  );
+  const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: json }} />;
 }

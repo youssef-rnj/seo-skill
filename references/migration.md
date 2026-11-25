@@ -5,6 +5,8 @@
 2. **Map each one** to the closest new page. No real equivalent → leave a 404 (redirecting everything
    to the home page is a soft 404). Keep the table in `seo/redirects.md` for review.
 3. **301 on the new site** for old paths that hit the new domain (framework redirects or server rules).
+   Exact paths only; a wildcard never covers a prefix the new site also uses. Test the whole table on a
+   local or preview build before deploying (`references/change-safety.md`, `references/validation.md`).
 4. **If the old platform is still online on another address** (e.g. `name.odoo.com`, `name.wixsite.com`,
    an old WordPress), redirect there too, otherwise both versions compete:
    - Many builders serve a published page before checking their redirect rules: the old page must be
@@ -17,4 +19,5 @@
 5. **External links**: update Google Business Profile (website, booking link), social profiles,
    directories to the new URLs.
 6. **Search Console**: remove the old site's sitemaps; submit the new one; request indexing of key pages.
-7. **Verify**: every mapped old URL answers 301 to the right page as an anonymous visitor.
+7. **Verify**: every mapped old URL answers one 301 to the right page, which returns 200, as an anonymous
+   visitor (`node scripts/seo-check.mjs <old URLs…>`); new pages still return 200.

@@ -1,18 +1,23 @@
+# A crawler follows only the most specific group that names it; repeat private paths in each group.
 User-agent: *
 Allow: /
 Disallow: /api/
 
-# Search and AI-answer bots (ChatGPT search, Perplexity, Claude, Copilot via Bing) are covered by "*".
-# Gemini apps / Vertex grounding. No effect on Google Search or AI Overviews.
+# Search and answer crawlers (Googlebot, Bingbot, OAI-SearchBot, PerplexityBot, Claude-SearchBot) are
+# covered by "*". User-triggered fetchers (ChatGPT-User, Perplexity-User, Claude-User) may ignore this file.
+
+# Google-Extended: control token for Gemini apps / Vertex AI training and grounding.
+# No effect on Google Search, AI Overviews or AI Mode.
 User-agent: Google-Extended
 Allow: /
 Disallow: /api/
 
-# Training-only crawlers: owner's choice. Delete this block to allow them.
+# DECISION REQUIRED (owner): crawlers that collect content for AI model training.
+# Blocking them does not affect search results. Delete this block to allow them; record the choice
+# in seo/facts.md.
 User-agent: GPTBot
 User-agent: CCBot
 User-agent: ClaudeBot
-User-agent: anthropic-ai
 Disallow: /
 
 # Never list secret admin paths here (this file is public). Protect them with noindex + authentication.
