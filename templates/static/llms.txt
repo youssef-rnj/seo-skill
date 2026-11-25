@@ -1,3 +1,5 @@
+<!-- Optional, experimental (references/ai-search.md): Google Search does not use llms.txt and no major
+     engine documents using it. Delete this comment block before publishing. -->
 # Example Company
 
 > One paragraph: who you are, what you do, for whom, where (full address). Only confirmed facts.

@@ -5,8 +5,8 @@ const BUSINESS_ID = `${SITE_URL}/#business`
 
 export const pages = {
   '/': {
-    title: 'Main service in City | Brand', // ≤ 60 characters
-    description: 'One sentence, 120–160 characters: service, place, benefit, call to action.',
+    title: 'Main service in City | Brand', // main words first; ~60 chars shows in full (guideline)
+    description: 'One sentence: service, place, benefit, call to action (~120–160 chars shows in full).',
   },
   '/services/example': {
     title: 'Example service in City | Brand',
